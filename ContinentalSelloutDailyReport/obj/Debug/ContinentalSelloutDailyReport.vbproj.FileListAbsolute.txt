@@ -1,0 +1,13 @@
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.exe.config
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.exe
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.pdb
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.xml
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\bin\Debug\dbClassNET.dll
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.Resources.resources
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.GenerateResource.cache
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.CoreCompileInputs.cache
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.CopyComplete
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.exe
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.xml
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.pdb
+C:\Users\Philip.Davide\OneDrive - Max Finkelstein Inc\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\bin\Debug\Renci.SshNet.dll
