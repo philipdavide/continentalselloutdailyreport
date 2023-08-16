@@ -10,7 +10,7 @@ Module Module1
   Const sftp_uploadlogin_dev As String = "MaFiNa1"
   Const sftp_uploadlogin_prod As String = "MaFiNa1"
   Const sftp_uploadpass_dev As String = "!CTA3mFi2na"
-  Const sftp_uploadpass_prod As String = "!CTA3mFi2na"
+  Const sftp_uploadpass_prod As String = "!CTA3mFinwna"
   Const sftp_uploadpath_dev As String = "outbound"
   Const sftp_uploadpath_prod As String = "outbound"
 
@@ -40,16 +40,20 @@ Module Module1
     Try
       Console.WriteLine("Write to CSV file.")
 
-      ' WriteToCSV(dataset.Tables(0))
-      UploadData(dataset.Tables(0))
-      If isProduction Then Email.JobCompleteEmail()
-      If Not isProduction Then Console.WriteLine("Job complete")
-      If Not isProduction Then Console.Read()
+      If isProduction Then
+        UploadData(dataset.Tables(0))
+        Email.JobCompleteEmail()
+      Else
+        WriteToCSV(dataset.Tables(0))
+        Console.WriteLine("Job complete")
+        Console.Read()
+      End If
     Catch ex As Exception
       Logger.LogMessage(CStr(TimeOfDay) & vbCrLf & vbCrLf & ex.Message & vbCrLf & vbCrLf & "Stack Trace:" & vbCrLf & ex.StackTrace, EventLogEntryType.Error)
 
-      If isProduction Then Email.LogError(ex)
-      If Not isProduction Then
+      If isProduction Then
+        Email.LogError(ex)
+      Else
         Console.WriteLine(ex.Message & vbCrLf & vbCrLf & "Stack Trace:" & vbCrLf & ex.StackTrace)
         Console.ReadLine()
       End If
