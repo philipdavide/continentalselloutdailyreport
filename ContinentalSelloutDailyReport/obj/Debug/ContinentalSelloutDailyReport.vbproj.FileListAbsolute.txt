@@ -26,3 +26,17 @@ C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\C
 C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.xml
 C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.pdb
 C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.AssemblyReference.cache
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.exe.config
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.exe
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.pdb
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\bin\Debug\ContinentalSelloutDailyReport.xml
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\bin\Debug\dbClassNET.dll
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\bin\Debug\Renci.SshNet.dll
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.AssemblyReference.cache
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.Resources.resources
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.GenerateResource.cache
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.CoreCompileInputs.cache
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.vbproj.CopyComplete
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.exe
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.xml
+C:\Users\P020206\OneDrive - U.S. Venture\Documents\Visual Studio 2019\Projects\ContinentalSelloutDailyReport - Inventory\ContinentalSelloutDailyReport\obj\Debug\ContinentalSelloutDailyReport.pdb

@@ -9,7 +9,7 @@ Module Module1
   Const sftp_uploadport_prod As Integer = 9346
   Const sftp_uploadlogin_dev As String = "MaFiNa1"
   Const sftp_uploadlogin_prod As String = "MaFiNa1"
-  Const sftp_uploadpass_dev As String = "!CTA3mFi2na"
+  Const sftp_uploadpass_dev As String = "!CTA3mFinwna"
   Const sftp_uploadpass_prod As String = "!CTA3mFinwna"
   Const sftp_uploadpath_dev As String = "outbound"
   Const sftp_uploadpath_prod As String = "outbound"
@@ -42,9 +42,11 @@ Module Module1
 
       If isProduction Then
         UploadData(dataset.Tables(0))
+        UploadInventoryData(dataset.Tables(1))
         Email.JobCompleteEmail()
       Else
-        WriteToCSV(dataset.Tables(0))
+        ' WriteToCSV(dataset.Tables(0))
+        WriteInventoryToCSV(dataset.Tables(1))
         Console.WriteLine("Job complete")
         Console.Read()
       End If
@@ -140,6 +142,43 @@ Module Module1
     System.IO.File.WriteAllText(csvFile, csvstring.ToString())
   End Sub
 
+  Private Sub WriteInventoryToCSV(ByVal datatable As DataTable)
+    Dim csvstring As New StringBuilder()
+
+    Dim totalColumns As Integer = datatable.Columns.Count - 1
+
+    'for testing and review
+    Dim columnsArray() As String = {"BillTo", "SoldTo", "CustomerLocationNo", "ArticleNo", "CustomerItemNo", "InvoiceNo", "InvoiceLineNo", "TransactionDate", "SoldQuantity", "OnHandQuantity", "Type", "Comment1", "Comment2", "Comment3"}
+
+    For i As Integer = 0 To columnsArray.Count - 1
+      Dim val As String = columnsArray(i)
+      If val.Contains(",") Then val = """" & val & """"
+      csvstring.Append(val)
+      If i < columnsArray.Count - 1 Then csvstring.Append("|")
+    Next
+
+    csvstring.AppendLine()
+
+    For Each row As DataRow In datatable.Rows
+      row.Item("CUSTOMER_LOCATION_NUMBER") = SoldToNumber(row.Item("IFLOC"))
+
+      For col As Integer = 0 To totalColumns
+        Dim val As String = IsNull(row(col))
+        If val.Contains(",") Then val = """" & val & """"
+        csvstring.Append(val)
+        If col < totalColumns Then csvstring.Append("|")
+      Next
+
+      csvstring.AppendLine()
+    Next
+
+    Dim csvFile As String = String.Format("WSINV_MFI_{0}_{1}.txt",
+                                          Now.ToString("yyyyMMdd"),
+                                          Now.ToString("HHmm"))
+
+    System.IO.File.WriteAllText(csvFile, csvstring.ToString())
+  End Sub
+
   Private Sub UploadData(ByVal dt As DataTable)
     Dim content As New StringBuilder
 
@@ -163,6 +202,69 @@ Module Module1
     Console.WriteLine("Upload CSV file to sftp site.")
 
     Dim fileName As String = String.Format("WS_MFI_{0}_{1}.txt",
+                                          Now.ToString("yyyyMMdd"),
+                                          Now.ToString("HHmm"))
+    Dim sftp_uploadpath As String = SFTPUploadPath()
+
+    Dim uploadfilename As String = IIf(sftp_uploadpath <> String.Empty, sftp_uploadpath & "/", String.Empty) _
+                             & fileName
+
+    Dim attempt As Integer = 0
+    Dim done As Boolean = False
+    Do
+      Try
+        Dim data As String = IO.File.ReadAllText(fname)
+        Dim sftp_uploadsite As String = SFTPUploadSite()
+        Dim sftp_uploadport As String = SFTPUploadPort()
+        Dim sftp_uploadlogin As String = SFTPUploadUser()
+        Dim sftp_uploadpass As String = SFTPUploadPass()
+
+        Using client As New SftpClient(sftp_uploadsite, sftp_uploadport, sftp_uploadlogin, sftp_uploadpass)
+          client.Connect()
+          client.WriteAllText(uploadfilename, data)
+          client.Disconnect()
+        End Using
+
+        done = True
+      Catch ex As Exception
+        Select Case attempt
+          Case 0, 1 : System.Threading.Thread.Sleep(10000)  ' sleep 10 seconds
+          Case 2 : System.Threading.Thread.Sleep(60000 * 10)  ' sleep 10 minutes
+          Case 3 : System.Threading.Thread.Sleep(60000 * 20)  ' sleep 20 minutes
+          Case 4 : System.Threading.Thread.Sleep(60000 * 30)  ' sleep 30 minutes
+          Case Else : Throw
+        End Select
+        attempt += 1
+      End Try
+    Loop Until done
+
+    System.IO.File.Delete(fname)
+  End Sub
+
+  Private Sub UploadInventoryData(ByVal dt As DataTable)
+    Dim content As New StringBuilder
+
+    For Each dr As DataRow In dt.Rows
+      dr.Item("CUSTOMER_LOCATION_NUMBER") = SoldToNumber(dr.Item("IFLOC"))
+
+      For i As Integer = 0 To dt.Columns.Count - 1
+        Dim val As String = IsNull(dr(i))
+        If val.Contains(",") Then val = """" & val & """"
+        content.Append(val)
+        If i < dt.Columns.Count - 1 Then content.Append("|")
+      Next
+      content.AppendLine()
+    Next
+    'get a temp file name
+    Dim fname As String = System.IO.Path.GetTempFileName
+    'write datatable to temp file name in temp location
+    Using fs As New IO.StreamWriter(fname)
+      fs.Write(content.ToString)
+    End Using
+
+    Console.WriteLine("Upload Inventory CSV file to sftp site.")
+
+    Dim fileName As String = String.Format("WSINV_MFI_{0}_{1}.txt",
                                           Now.ToString("yyyyMMdd"),
                                           Now.ToString("HHmm"))
     Dim sftp_uploadpath As String = SFTPUploadPath()
