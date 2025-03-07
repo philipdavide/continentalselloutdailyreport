@@ -3,8 +3,8 @@ Imports Renci.SshNet
 
 Module Module1
   Private isProduction As Boolean = True
-  Const sftp_uploadsite_dev As String = "139.1.145.28"
-  Const sftp_uploadsite_prod As String = "139.1.145.28"
+  Const sftp_uploadsite_dev As String = "odetteftp2.conti.de"
+  Const sftp_uploadsite_prod As String = "odetteftp2.conti.de"
   Const sftp_uploadport_dev As Integer = 9146
   Const sftp_uploadport_prod As Integer = 9346
   Const sftp_uploadlogin_dev As String = "MaFiNa1"
